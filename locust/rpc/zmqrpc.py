@@ -25,14 +25,15 @@ class BaseSocket(object):
         msg = Message.unserialize(data[1])
         return addr, msg
 
+
 class Server(BaseSocket):
     def __init__(self, host, port):
         BaseSocket.__init__(self, zmq.ROUTER)
         self.socket.bind("tcp://%s:%i" % (host, port))
+
 
 class Client(BaseSocket):
     def __init__(self, host, port, identity):
         BaseSocket.__init__(self, zmq.DEALER)
         self.socket.setsockopt(zmq.IDENTITY, identity.encode())
         self.socket.connect("tcp://%s:%i" % (host, port))
-        

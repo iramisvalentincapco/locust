@@ -12,15 +12,11 @@ class TestParser(unittest.TestCase):
         self.assertEqual(opts.reset_stats, False)
 
     def test_reset_stats(self):
-        args = [
-            "--reset-stats"
-        ]
+        args = ["--reset-stats"]
         opts, _ = self.parser.parse_args(args)
         self.assertEqual(opts.reset_stats, True)
 
     def test_should_accept_legacy_no_reset_stats(self):
-        args = [
-            "--no-reset-stats"
-        ]
+        args = ["--no-reset-stats"]
         opts, _ = self.parser.parse_args(args)
         self.assertEqual(opts.reset_stats, False)

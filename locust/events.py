@@ -99,9 +99,18 @@ hatch_complete = EventHook()
 """
 *hatch_complete* is fired when all locust users has been spawned.
 
-Event is fire with the following arguments:
+Event is fired with the following arguments:
 
-* *user_count*: Number of users that was hatched
+* *user_count*: Number of users that were hatched
+"""
+
+expire_complete = EventHook()
+"""
+*expire_complete* is fired when all locust users have been expired.
+
+Event is fired with the following arguments:
+
+* *user_count*: Number of users that were expired
 """
 
 quitting = EventHook()
@@ -131,4 +140,18 @@ locust_start_hatching = EventHook()
 locust_stop_hatching = EventHook()
 """
 *locust_stop_hatching* is fired when terminate the hatching process on any locust worker.
+"""
+
+locust_start_expiring = EventHook()
+"""
+*locust_start_expiring* is fired when we initiate the expiration process on hatch_complete.
+
+Event is fired with the following arguments:
+
+* *user_count*: Number of users that were hatched
+"""
+
+locust_stop_expiring = EventHook()
+"""
+*locust_stop_expiring* is fired when terminate the expiration process on any locust worker.
 """

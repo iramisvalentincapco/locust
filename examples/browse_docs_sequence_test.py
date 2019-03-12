@@ -16,9 +16,7 @@ class BrowseDocumentationSequence(TaskSequence):
         r = self.client.get("/")
         pq = PyQuery(r.content)
         link_elements = pq(".toctree-wrapper a.internal")
-        self.toc_urls = [
-            l.attrib["href"] for l in link_elements
-        ]
+        self.toc_urls = [l.attrib["href"] for l in link_elements]
 
     @seq_task(2)
     @task(50)
@@ -27,9 +25,7 @@ class BrowseDocumentationSequence(TaskSequence):
         r = self.client.get(url)
         pq = PyQuery(r.content)
         link_elements = pq("a.internal")
-        self.urls_on_current_page = [
-            l.attrib["href"] for l in link_elements
-        ]
+        self.urls_on_current_page = [l.attrib["href"] for l in link_elements]
 
     @seq_task(3)
     @task(30)

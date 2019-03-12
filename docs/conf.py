@@ -24,25 +24,23 @@ from locust import __version__
 extensions = ["sphinx.ext.autodoc", "sphinx.ext.intersphinx"]
 
 # autoclass options
-#autoclass_content = "both"
+# autoclass_content = "both"
 
 # Add any paths that contain templates here, relative to this directory.
-#templates_path = ["_templates"]
+# templates_path = ["_templates"]
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # General substitutions.
-project = 'Locust'
-#copyright = ''
+project = "Locust"
+# copyright = ''
 
 # Intersphinx config
-intersphinx_mapping = {
-    'requests': ('https://requests.readthedocs.io/en/latest/', None),
-}
+intersphinx_mapping = {"requests": ("https://requests.readthedocs.io/en/latest/", None)}
 
 
 # The full version, including alpha/beta/rc tags.
@@ -50,12 +48,12 @@ release = __version__
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-#today = ''
+# today = ''
 # Else, today_fmt is used as the format for a strftime call.
-today_fmt = '%B %d, %Y'
+today_fmt = "%B %d, %Y"
 
 # List of documents that shouldn't be included in the build.
-#unused_docs = []
+# unused_docs = []
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
 add_function_parentheses = True
@@ -68,9 +66,9 @@ add_module_names = False
 # output. They are ignored by default.
 show_authors = False
 
-# Sphinx will recurse into subversion configuration folders and try to read  
-# any document file within. These should be ignored. 
-# Note: exclude_dirnames is new in Sphinx 0.5 
+# Sphinx will recurse into subversion configuration folders and try to read
+# any document file within. These should be ignored.
+# Note: exclude_dirnames is new in Sphinx 0.5
 exclude_dirnames = []
 
 # Options for HTML output
@@ -81,22 +79,23 @@ html_file_suffix = ".html"
 
 
 # on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+on_rtd = os.environ.get("READTHEDOCS", None) == "True"
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
     import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
+
+    html_theme = "sphinx_rtd_theme"
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # HTML theme
-#html_theme = "haiku"
+# html_theme = "haiku"
 
-#html_theme = "default"
-#html_theme_options = {
+# html_theme = "default"
+# html_theme_options = {
 #    "rightsidebar": "true",
 #    "codebgcolor": "#fafcfa",
 #    "bodyfont": "Arial",
-#}
+# }
 
 # The name of the Pygments (syntax highlighting) style to use.
-#pygments_style = 'trac'
+# pygments_style = 'trac'
